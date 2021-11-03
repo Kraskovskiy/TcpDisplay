@@ -16,5 +16,5 @@
 
 <resources>
     <!-- Match all devices -->
-    <usb-accessory manufacturer="Android" model="Accessory Display" />
+    <usb-accessory/>
 </resources>

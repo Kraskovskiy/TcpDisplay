@@ -18,12 +18,12 @@ repositories {
 }
 
 android {
-    compileSdkVersion 24
+    compileSdkVersion 29
 
     defaultConfig {
         applicationId "com.android.accessorydisplay.sink"
         minSdkVersion 21
-        targetSdkVersion 24
+        targetSdkVersion 29
     }
 
     buildTypes {
@@ -36,11 +36,12 @@ android {
     sourceSets {
         main {
             manifest.srcFile 'AndroidManifest.xml'
-            java.srcDirs = ['src','common']
+            java.srcDirs = ['src']
             res.srcDirs = ['res']
         }
     }
 }
 
 dependencies {
+    implementation project(':common')
 }

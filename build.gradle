@@ -1,0 +1,35 @@
+buildscript {
+  ext.versions = [
+    kotlin: '1.4.0',
+  ]
+
+  repositories {
+    mavenCentral()
+    google()
+    gradlePluginPortal()
+  }
+  dependencies {
+    classpath 'com.android.tools.build:gradle:4.0.1'
+    classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+  }
+}
+
+subprojects {
+  repositories {
+    google()
+    jcenter()
+    mavenCentral()
+  }
+}
+
+
+wrapper {
+  gradleVersion = '6.5.1'
+  distributionType = Wrapper.DistributionType.ALL
+}
+
+subprojects {
+  project.plugins.withId("com.android.library") {
+    project.android.buildFeatures.buildConfig = false
+  }
+}
